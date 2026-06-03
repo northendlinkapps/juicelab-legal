@@ -1,51 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - JuiceLab</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #111827; }
-        h1 { color: #22c55e; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
-        h2 { color: #1f2937; margin-top: 30px; }
-        .date { color: #6b7280; font-style: italic; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+  <title>Privacy Policy · JuiceLab</title>
+  <meta name="description" content="How JuiceLab collects, uses, stores, and protects your data." />
+  <style>
+    :root {
+      --bg: #fbfdf7;
+      --card: #ffffff;
+      --ink: #1f2a1c;
+      --muted: #5d6b58;
+      --accent: #5aa02c;
+      --accent-soft: #eaf5e0;
+      --border: #e4ebdc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #12150f;
+        --card: #1a1e15;
+        --ink: #e8efe2;
+        --muted: #9fae97;
+        --accent: #8fd35a;
+        --accent-soft: #21301a;
+        --border: #2a3122;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      font-size: 17px;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 32px 22px 80px; }
+    header {
+      text-align: center;
+      padding: 28px 0 8px;
+    }
+    .logo { font-size: 52px; line-height: 1; }
+    h1 { font-size: 1.9rem; margin: 12px 0 4px; letter-spacing: -0.01em; }
+    .updated {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    main {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 8px 28px 28px;
+      margin-top: 26px;
+    }
+    .intro { color: var(--muted); margin-top: 22px; }
+    h2 {
+      font-size: 1.18rem;
+      margin: 34px 0 6px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      letter-spacing: -0.01em;
+    }
+    h2:first-of-type { border-top: none; padding-top: 6px; }
+    h3 { font-size: 1.02rem; margin: 20px 0 4px; color: var(--accent); }
+    p, li { color: var(--ink); }
+    ul { padding-left: 1.15rem; }
+    li { margin: 8px 0; }
+    li strong, p strong { color: var(--ink); }
+    a { color: var(--accent); }
+    blockquote {
+      margin: 16px 0;
+      padding: 12px 16px;
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      color: var(--ink);
+    }
+    blockquote p { margin: 0; }
+    .note { color: var(--muted); font-style: italic; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 36px;
+    }
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">🍋</div>
+      <h1>Privacy Policy</h1>
+      <div class="updated">Last updated: June 3, 2026</div>
+    </header>
 
-    <h1>Privacy Policy for JuiceLab</h1>
-    <p class="date">Last Updated: June 3, 2026</p>
+    <main>
+      <p class="intro">
+        Your privacy is important to us. This Privacy Policy explains how JuiceLab
+        ("the app", "we", "us", "our") collects, uses, stores, and protects your data when you use
+        the JuiceLab mobile application and our associated services.
+      </p>
 
-    <p>Your privacy is important to us. This Privacy Policy explains how JuiceLab ("the app", "we", "us", "our") collects, uses, stores, and protects your data when you use the JuiceLab mobile application and our associated services.</p>
+      <h2>1. Information We Collect</h2>
+      <p>
+        JuiceLab is designed to provide you with a personalized experience, whether you use the app
+        as an anonymous guest or as a registered user. We collect the following categories of
+        information:
+      </p>
+      <ul>
+        <li><strong>Temporary Anonymous Identifiers (Guest Users):</strong> To allow you to use the
+          app without registering, we create an anonymous guest session protected with a secure JSON
+          Web Token (JWT). This lets you build and save recipes before you ever create an account.</li>
+        <li><strong>Device Identifier:</strong> When you first open the app we generate a random,
+          app-specific device identifier that is stored on your device and sent with your requests.
+          We use it only to enforce free-tier usage limits (for example, the number of free AI recipe
+          generations) and to prevent abuse such as repeatedly creating new accounts to bypass those
+          limits. This identifier is <strong>not</strong> the advertising identifier (IDFA), is not
+          used for advertising, and is reset if you delete and reinstall the app.</li>
+        <li><strong>Account and Profile Data:</strong> If you choose to register a permanent account,
+          we store your <strong>username</strong> and a securely hashed version of your
+          <strong>password</strong>, along with your chosen <strong>display name</strong>. If you
+          instead use <em>Sign in with Apple</em>, we store the identifier Apple provides and, if you
+          authorize it, the <strong>email address</strong> Apple shares with us — which may be a
+          private Apple relay address rather than your real email. If you upgrade from a guest account,
+          we automatically merge your temporary guest data into your new permanent profile.</li>
+        <li><strong>User Configurations and Settings:</strong> We store your personalized overrides in
+          our secure database (Azure SQL), including custom ingredient yields, ingredient prices
+          (internally stored in USD), category memberships, cleaning difficulties, customized recipe
+          yields, and your language and theme preferences.</li>
+        <li><strong>Recipes and Brewing History:</strong> We store the custom recipes you create,
+          alongside historical snapshots of your active and completed juicing rounds (batches) so they
+          remain unaffected by future catalog updates.</li>
+        <li><strong>Messages You Send Us:</strong> If you contact us through the in-app contact form
+          or messaging feature, we store the content of those messages so we can respond and provide
+          support.</li>
+        <li><strong>AI Usage Records:</strong> Each time you use an AI feature, we record a usage entry
+          containing the AI provider used, the outcome, processing time, a timestamp, and your user and
+          device identifiers. We use this strictly to enforce usage quotas, detect abuse, and monitor
+          reliability.</li>
+        <li><strong>Technical Logs:</strong> We collect error logs and system performance data (via
+          Azure Log Analytics) to help us troubleshoot technical issues and maintain app stability.
+          These logs may include your IP address and a user or device identifier for the duration
+          needed to diagnose a problem.</li>
+      </ul>
 
-    <h2>1. Information We Collect</h2>
-    <ul>
-        <li><strong>Temporary Anonymous Identifiers (Guest Users):</strong> To allow you to use the app without registering, we create an anonymous guest session protected with a secure JSON Web Token (JWT). This allows you to build and save recipes locally on your device.</li>
-        <li><strong>Account and Profile Data:</strong> If you choose to register a permanent account (e.g., via password login or <em>Sign in with Apple</em>), we store your email address and a securely encrypted version of your password. If you upgrade from a guest account, we automatically merge your temporary guest data into your new permanent profile.</li>
-        <li><strong>User Configurations and Settings:</strong> We store your personalized overrides directly in our secure database (Azure SQL), including custom ingredient yields, ingredient prices (internally stored in USD), category memberships, cleaning difficulties, and customized recipe yields.</li>
-        <li><strong>Recipes and Brewing History:</strong> We store the custom recipes you create, alongside historical snapshots of your active and completed juicing rounds (batches).</li>
-        <li><strong>Technical Logs:</strong> We anonymously collect error logs and system performance data (via Azure Log Analytics) to help us troubleshoot technical issues and maintain app stability.</li>
-    </ul>
+      <h2>2. How We Use Your Information</h2>
+      <p>We use your data strictly to deliver and improve the functional features of the app, including:</p>
+      <ul>
+        <li>Calculating accurate nutrition profiles and daily intake percentages based on your selected
+          ingredients.</li>
+        <li>Calculating estimated costs per glass using your custom price overrides mapped against
+          current currency exchange rates.</li>
+        <li>Synchronizing your saved recipes across multiple devices when you are securely logged in.</li>
+        <li>Enforcing free-tier limits and preventing abuse of our service.</li>
+      </ul>
+      <p class="note">
+        A Note on Nutritional Data: All nutrition calculations, vitamin profiles, and dietary metrics
+        in JuiceLab are provided purely as estimates for informational purposes. The app does not track
+        medical health records and does not share your data with external medical or health platforms
+        (such as Apple Health).
+      </p>
 
-    <h2>2. How We Use Your Information</h2>
-    <p>We use your data strictly to deliver and improve the functional features of the app, including calculating nutrition profiles, estimating costs per glass using your custom price overrides, and synchronizing your saved recipes across multiple devices when logged in.</p>
-    <p><em>A Note on Nutritional Data:</em> All nutrition calculations and vitamin profiles in JuiceLab are provided purely as estimates for informational purposes. The app does not track medical health records and does not share your data with external medical platforms (such as Apple Health).</p>
+      <h2>3. Data Sharing and Third-Party Services</h2>
+      <p>
+        We never sell your personal information to advertisers or external commercial companies. However,
+        to deliver specific app features, we securely coordinate with the following trusted third-party
+        providers. We require these providers to protect your data and to use it only for the purposes
+        described below.
+      </p>
 
-    <h2>3. Data Sharing and Third-Party Services</h2>
-    <p>We never sell your personal information. However, to deliver specific app features, we coordinate with the following secure providers:</p>
-    <ul>
-        <li><strong>AI-Generated Recipes ("Empty the Fridge"):</strong> When using AI features, we pass the text list of selected ingredients and target volume to our AI processing providers (such as Anthropic Claude, OpenAI, or Gemini). We <strong>never</strong> transmit your name, email, or other personal data to these providers.</li>
-        <li><strong>Payments and Subscriptions (Apple StoreKit):</strong> All purchases are managed exclusively by Apple (StoreKit). JuiceLab never views or stores your credit card details. Apple transmits only an anonymized, signed transaction token (OriginalTransactionId) to verify your Premium entitlement.</li>
-    </ul>
+      <h3>AI-Generated Recipes ("Empty the Fridge" and AI Suggestions)</h3>
+      <p>
+        When you trigger the app's AI features, we send the information needed to generate a recipe to
+        one of our AI processing providers (such as <strong>Anthropic Claude</strong>,
+        <strong>OpenAI</strong>, or <strong>Google Gemini</strong>). Depending on the feature, this may
+        include:
+      </p>
+      <ul>
+        <li>the list of ingredients you select and your target juice volume (ml);</li>
+        <li>any free-text prompt you type;</li>
+        <li>your taste preferences (such as sweetness and sourness levels), preferred juicer type, and
+          the number of ingredients; and</li>
+        <li>your selected display language, so the recipe is returned in that language.</li>
+      </ul>
+      <blockquote>
+        <p><strong>Important:</strong> We <strong>never</strong> transmit your name, email address,
+          account identifier, or device identifier to these AI providers. Please avoid typing personal
+          information into the free-text prompt, as that text is sent to the AI provider to generate
+          your recipe.</p>
+      </blockquote>
+      <p>
+        These AI providers may process this data on servers located outside the European Economic Area
+        (for example, in the United States). See <em>International Data Transfers</em> below.
+      </p>
 
-    <h2>4. Data Security</h2>
-    <p>Your data is housed securely on cloud architecture located in Europe (Microsoft Azure). All communication between the mobile application and our API infrastructure is strictly encrypted using HTTPS protocols.</p>
+      <h3>Payments and Subscriptions (Apple StoreKit)</h3>
+      <p>
+        All monthly and yearly premium subscription purchases are managed exclusively by Apple through
+        their official payment framework (StoreKit).
+      </p>
+      <ul>
+        <li>JuiceLab <strong>never</strong> views, accesses, or stores your credit card numbers, billing
+          addresses, or banking details.</li>
+        <li>Apple transmits only an anonymized, cryptographically signed transaction token (including an
+          <code>OriginalTransactionId</code>) to our backend servers so we can verify whether your
+          Premium entitlement is active.</li>
+      </ul>
 
-    <h2>5. Your Rights and Data Deletion</h2>
-    <p>In strict compliance with Apple’s app guidelines, you hold the <strong>absolute right to delete your user account permanently</strong>. You can initiate a complete account erasure directly from the Profile screen within the app. Upon deletion, your data is removed permanently from our active databases.</p>
+      <h2>4. Tracking and Advertising</h2>
+      <p>
+        JuiceLab does <strong>not</strong> track you across apps or websites owned by other companies,
+        does <strong>not</strong> use the Apple advertising identifier (IDFA), and does
+        <strong>not</strong> display third-party advertising. Because we do not track you in this way,
+        the app does not present the App Tracking Transparency prompt. The identifiers we use (described
+        in Section 1) are used solely to operate the app's own features and limits.
+      </p>
 
-    <h2>6. Contact Us</h2>
-    <p>If you have any questions regarding this Privacy Policy or wish to exercise your data deletion rights, you can reach out to us using the contact form endpoint in the application or via our support email.</p>
+      <h2>5. International Data Transfers</h2>
+      <p>
+        Your account data and recipes are housed on cloud infrastructure located in Europe (Microsoft
+        Azure). However, some features rely on providers located outside the European Economic Area — in
+        particular, the AI providers described in Section 3, which may process your request in the United
+        States. Where data is transferred internationally, we rely on the relevant provider's safeguards
+        (such as Standard Contractual Clauses or equivalent mechanisms) to protect it.
+      </p>
 
+      <h2>6. Data Security</h2>
+      <p>
+        All communication between the mobile application on your phone and our API infrastructure is
+        strictly encrypted using HTTPS. Passwords are stored only in securely hashed form, and access to
+        user sessions is governed by short-lived JSON Web Tokens (JWT) to safeguard your account against
+        unauthorized entry.
+      </p>
+
+      <h2>7. Data Retention</h2>
+      <ul>
+        <li><strong>Account, profile, configuration, and recipe data</strong> is retained for as long as
+          your account exists, and is deleted when you delete your account (see Section 8).</li>
+        <li><strong>Technical logs and AI usage records</strong> are retained for a limited period needed
+          for troubleshooting, reliability monitoring, and abuse prevention, after which they are deleted
+          or anonymized.</li>
+        <li><strong>Guest data</strong> that is never linked to a permanent account may be removed after a
+          period of inactivity.</li>
+      </ul>
+
+      <h2>8. Your Rights and Data Deletion</h2>
+      <p>
+        You retain the right to request access to the data we store about you, to request corrections to
+        any inaccuracies, to request a copy of your data in a portable format, and to object to certain
+        processing.
+      </p>
+      <p>
+        In strict compliance with Apple's app guidelines, you also hold the <strong>absolute right to
+        delete your user account permanently</strong>. You can initiate a complete account erasure directly
+        from the Profile screen within the app, or by contacting us. Upon deletion, your account
+        identifiers, email address (if any), custom configurations, and all saved recipes are removed
+        permanently from our active databases.
+      </p>
+      <p>
+        If you are located in the European Economic Area or the United Kingdom, you also have the right to
+        lodge a complaint with your local data protection supervisory authority.
+      </p>
+
+      <h2>9. Children's Privacy</h2>
+      <p>
+        JuiceLab is not directed to children under the age of 13 (or under 16 in regions where that is the
+        applicable minimum age), and we do not knowingly collect personal information from children. If you
+        believe a child has provided us with personal information, please contact us so we can delete it.
+      </p>
+
+      <h2>10. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time to reflect changes in our app or legal
+        requirements. When we make material changes, we will update the "Last updated" date above and,
+        where appropriate, notify you within the app. Your continued use of JuiceLab after an update
+        constitutes acceptance of the revised policy.
+      </p>
+
+      <h2>11. Contact Us</h2>
+      <p>
+        If you have any questions regarding this Privacy Policy or wish to exercise your data rights, you
+        can reach us through the in-app contact form or by email at
+        <a href="mailto:support@juicelab.app">support@juicelab.app</a>.
+      </p>
+    </main>
+
+    <footer>© 2026 JuiceLab. All rights reserved.</footer>
+  </div>
 </body>
 </html>
