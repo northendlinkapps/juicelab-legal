@@ -8,24 +8,14 @@
   <meta name="description" content="How JuiceLab collects, uses, stores, and protects your data." />
   <style>
     :root {
-      --bg: #fbfdf7;
-      --card: #ffffff;
-      --ink: #1f2a1c;
-      --muted: #5d6b58;
-      --accent: #5aa02c;
-      --accent-soft: #eaf5e0;
-      --border: #e4ebdc;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #12150f;
-        --card: #1a1e15;
-        --ink: #e8efe2;
-        --muted: #9fae97;
-        --accent: #8fd35a;
-        --accent-soft: #21301a;
-        --border: #2a3122;
-      }
+      --bg: #0b0f1a;
+      --card: #141a2b;
+      --ink: #e9eef9;
+      --muted: #98a3bd;
+      --brand: #5b86ff;
+      --brand-soft: #18223f;
+      --accent: #ffd23f;
+      --line: #283150;
     }
     * { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; }
@@ -36,37 +26,41 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.65;
       font-size: 17px;
+      -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 32px 22px 80px; }
-    header {
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 22px; }
+    .hero {
       text-align: center;
-      padding: 28px 0 8px;
+      padding: 64px 22px 52px;
+      background: radial-gradient(120% 100% at 50% 0%, #1a2550 0%, var(--bg) 70%);
+      border-bottom: 1px solid var(--line);
     }
-    .logo { font-size: 52px; line-height: 1; }
-    h1 { font-size: 1.9rem; margin: 12px 0 4px; letter-spacing: -0.01em; }
+    .hero .logo { font-size: 56px; line-height: 1; }
+    .hero h1 { font-size: 2rem; margin: 14px 0 4px; letter-spacing: -0.02em; }
     .updated {
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 10px;
       padding: 4px 12px;
       font-size: 0.82rem;
       color: var(--accent);
-      background: var(--accent-soft);
+      background: var(--brand-soft);
+      border: 1px solid var(--line);
       border-radius: 999px;
       font-weight: 600;
     }
     main {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 18px;
       padding: 8px 28px 28px;
-      margin-top: 26px;
+      margin: 40px 0 56px;
     }
     .intro { color: var(--muted); margin-top: 22px; }
     h2 {
       font-size: 1.18rem;
       margin: 34px 0 6px;
       padding-top: 22px;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
       letter-spacing: -0.01em;
     }
     h2:first-of-type { border-top: none; padding-top: 6px; }
@@ -75,12 +69,13 @@
     ul { padding-left: 1.15rem; }
     li { margin: 8px 0; }
     li strong, p strong { color: var(--ink); }
-    a { color: var(--accent); }
+    a { color: var(--brand); }
+    code { background: var(--brand-soft); padding: 1px 6px; border-radius: 6px; font-size: 0.9em; }
     blockquote {
       margin: 16px 0;
       padding: 12px 16px;
-      background: var(--accent-soft);
-      border-left: 3px solid var(--accent);
+      background: var(--brand-soft);
+      border-left: 3px solid var(--brand);
       border-radius: 8px;
       color: var(--ink);
     }
@@ -90,18 +85,20 @@
       text-align: center;
       color: var(--muted);
       font-size: 0.85rem;
-      margin-top: 36px;
+      padding: 28px 22px 52px;
+      border-top: 1px solid var(--line);
     }
+    footer a { color: var(--muted); }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo" aria-hidden="true">🍋</div>
-      <h1>Privacy Policy</h1>
-      <div class="updated">Last updated: June 3, 2026</div>
-    </header>
+  <header class="hero">
+    <div class="logo" aria-hidden="true">🍋</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: June 3, 2026</div>
+  </header>
 
+  <div class="wrap">
     <main>
       <p class="intro">
         Your privacy is important to us. This Privacy Policy explains how JuiceLab
@@ -148,8 +145,8 @@
           reliability.</li>
         <li><strong>Technical Logs:</strong> We collect error logs and system performance data (via
           Azure Log Analytics) to help us troubleshoot technical issues and maintain app stability.
-          These logs may include your IP address and a user or device identifier for the duration
-          needed to diagnose a problem.</li>
+          These logs may include a user or device identifier for the duration needed to diagnose a
+          problem. We do <strong>not</strong> record your IP address in these logs.</li>
       </ul>
 
       <h2>2. How We Use Your Information</h2>
@@ -186,17 +183,24 @@
       </p>
       <ul>
         <li>the list of ingredients you select and your target juice volume (ml);</li>
-        <li>any free-text prompt you type;</li>
         <li>your taste preferences (such as sweetness and sourness levels), preferred juicer type, and
           the number of ingredients; and</li>
         <li>your selected display language, so the recipe is returned in that language.</li>
       </ul>
       <blockquote>
         <p><strong>Important:</strong> We <strong>never</strong> transmit your name, email address,
-          account identifier, or device identifier to these AI providers. Please avoid typing personal
-          information into the free-text prompt, as that text is sent to the AI provider to generate
-          your recipe.</p>
+          account identifier, or device identifier to these AI providers. The app does not offer a
+          free-text prompt &mdash; you generate recipes only by choosing from predefined options
+          (ingredients, categories, taste preferences, and volume), so no free-form text you type is
+          ever sent to an AI provider.</p>
       </blockquote>
+      <p>
+        Processing by these providers is also governed by their own privacy policies and API terms of
+        service — we encourage you to review Anthropic's, OpenAI's, and Google's respective privacy
+        documentation if you have questions about their individual data practices. JuiceLab does not
+        have direct technical control over how these providers handle data once it has been processed
+        on their infrastructure; our ability to enforce restrictions is contractual, not technical.
+      </p>
       <p>
         These AI providers may process this data on servers located outside the European Economic Area
         (for example, in the United States). See <em>International Data Transfers</em> below.
@@ -289,11 +293,11 @@
       <p>
         If you have any questions regarding this Privacy Policy or wish to exercise your data rights, you
         can reach us through the in-app contact form or by email at
-        <a href="mailto:support@juicelab.app">support@juicelab.app</a>.
+        <a href="mailto:northendlinkapps@gmail.com">northendlinkapps@gmail.com</a>.
       </p>
     </main>
-
-    <footer>© 2026 JuiceLab. All rights reserved.</footer>
   </div>
+
+  <footer>© 2026 Northend Link · <a href="https://northendlinkapps.github.io/support">Support</a> · <a href="mailto:northendlinkapps@gmail.com">northendlinkapps@gmail.com</a></footer>
 </body>
 </html>
